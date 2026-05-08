@@ -1,0 +1,26 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check-repository:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check repository structure
+        shell: pwsh
+        run: .\scripts\check-repo.ps1
+
+      - name: Explain build status
+        shell: pwsh
+        run: |
+          if (Test-Path -LiteralPath "package.json") {
+            Write-Host "package.json exists. Add install/build steps when the app scaffold is introduced."
+          } else {
+            Write-Host "No package.json yet. Skipping app install/build because the app body has not been created."
+          }

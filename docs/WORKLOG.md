@@ -157,6 +157,7 @@ git push -u origin main
 - ブランチ名を `main` に変更した。
 - `git push -u origin main` は失敗した。
 - 人間が対象ディレクトリをGitの `safe.directory` に追加したあと、`git push -u origin main` が成功した。
+- GitHub Actions画面で、`Initial repository operations setup` と `Record initial GitHub push result` の2件が成功していることを人間が確認した。
 
 ### 失敗・回避策
 
@@ -176,6 +177,6 @@ git push -u origin main
 
 ### 次にやること
 
-- Git初期化、ユーザー設定、初回コミット、リモート登録を行う。
-- GitHub Actionsの初回実行結果を確認する。
-- Actionsが失敗している場合は、ログを見て環境問題かプロジェクト問題か切り分ける。
+- `docs/GAME_IDEAS.md` の10案から、最初に試作する候補を1つ選ぶ。
+- 最初のプロトタイプでPhaserを採用する方針でよいか確認する。
+- Phaser採用時の開発サーバー、build、実画面確認手順を決める。

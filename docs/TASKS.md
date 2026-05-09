@@ -16,10 +16,6 @@
 
 ## 未完了タスク
 
-- [ ] GitHub Actionsの初回実行結果を確認する。
-  - 状態: 未着手
-  - メモ: `main` ブランチはGitHubへpush済み。GitHub上でActionsが成功しているか確認する。
-
 - [ ] Phaser小ゲーム案から最初に試作する候補を1つ選ぶ。
   - 状態: 未着手
   - メモ: `docs/GAME_IDEAS.md` の10案から、最初の1〜3日プロトタイプ候補を選ぶ。
@@ -74,7 +70,11 @@
 - [x] Git管理の初期設定を行う。
   - 完了日: 2026-05-09
   - 確認: `.gitignore` と `.gitattributes` を追加し、Git初期化、ユーザー設定、リモート登録、初回コミット、GitHubへの初回pushを行った。
-  - 残る確認: GitHub Actions上での実行結果は未確認。
+  - 残る確認: なし。
+
+- [x] GitHub Actionsの初回実行結果を確認する。
+  - 完了日: 2026-05-09
+  - 確認: GitHubのActions画面で、`Initial repository operations setup` と `Record initial GitHub push result` の2件が成功していることを人間が確認した。
 
 ## 確認済みコマンド
 
@@ -88,13 +88,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\check-repo.ps1
 
 ## 未確認事項
 
-- GitHub Actions上での実行結果。
 - 人間が `README.md` と `AGENTS.md` を読んだときに、目的と作業ルールが十分に伝わるか。
 - 実ゲーム画面の表示確認。
 - ブラウザコンソールエラーの確認。
 - Phaserを採用した場合の実際の開発サーバー起動手順。
 - Phaserを採用した場合のbuild手順。
-- GitHub Actions上で `.github/workflows/build.yml` が成功するか。
 
 ## 次に人間が確認すべきこと
 
@@ -102,5 +100,3 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\check-repo.ps1
 - `docs/GAME_IDEAS.md` の10案から、最初に試作したい案を1つ選ぶ。
 - 最初のプロトタイプでPhaserを採用する方針でよいか確認する。
 - PowerShell実行ポリシーをローカル環境でどう扱うか確認する。
-- GitHub Actionsが実際に成功するか確認する。
-- GitHubのActionsタブで初回ワークフロー結果を確認する。

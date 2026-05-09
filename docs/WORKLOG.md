@@ -156,6 +156,7 @@ git push -u origin main
 - 初回コミットを作成した。
 - ブランチ名を `main` に変更した。
 - `git push -u origin main` は失敗した。
+- 人間が対象ディレクトリをGitの `safe.directory` に追加したあと、`git push -u origin main` が成功した。
 
 ### 失敗・回避策
 
@@ -167,9 +168,14 @@ git push -u origin main
 - デメリット: 認証が完了するまでAIエージェント側ではpushできない。
 - 将来的に戻すべきか: 認証が完了したら、通常の `git push -u origin main` を再実行する。
 - 区分: 環境問題。プロジェクトファイルやリモートURLの問題ではない。
+- push再実行時に、Gitのdubious ownership検出が出た。
+- 通常の直し方: Gitが提示した対象ディレクトリのみを `safe.directory` に追加する。
+- デメリット: そのディレクトリを現在のWindowsユーザーが信頼する設定になる。
+- 将来的に戻すべきか: この作業ディレクトリを継続利用するなら維持してよい。不要になったらグローバルGit設定から削除できる。
+- 区分: Codex側ユーザーと人間側Windowsユーザーの所有者差分による環境問題。
 
 ### 次にやること
 
 - Git初期化、ユーザー設定、初回コミット、リモート登録を行う。
-- 人間がGitHub HTTPS認証を完了する。
-- 認証後に `git push -u origin main` を再実行する。
+- GitHub Actionsの初回実行結果を確認する。
+- Actionsが失敗している場合は、ログを見て環境問題かプロジェクト問題か切り分ける。

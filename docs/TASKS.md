@@ -16,9 +16,9 @@
 
 ## 未完了タスク
 
-- [ ] GitHubリモートへ初回pushする。
-  - 状態: 保留
-  - メモ: `git push -u origin main` はGitHub HTTPS認証情報が未設定のため失敗した。人間がGit Credential Manager、GitHub CLI、またはブラウザ認証でHTTPS認証を完了する必要がある。
+- [ ] GitHub Actionsの初回実行結果を確認する。
+  - 状態: 未着手
+  - メモ: `main` ブランチはGitHubへpush済み。GitHub上でActionsが成功しているか確認する。
 
 - [ ] Phaser小ゲーム案から最初に試作する候補を1つ選ぶ。
   - 状態: 未着手
@@ -73,8 +73,8 @@
 
 - [x] Git管理の初期設定を行う。
   - 完了日: 2026-05-09
-  - 確認: `.gitignore` と `.gitattributes` を追加し、Git初期化、ユーザー設定、リモート登録、初回コミットを行った。
-  - 残る確認: GitHubへのpushは認証状態に依存するため未確認。
+  - 確認: `.gitignore` と `.gitattributes` を追加し、Git初期化、ユーザー設定、リモート登録、初回コミット、GitHubへの初回pushを行った。
+  - 残る確認: GitHub Actions上での実行結果は未確認。
 
 ## 確認済みコマンド
 
@@ -94,7 +94,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\check-repo.ps1
 - ブラウザコンソールエラーの確認。
 - Phaserを採用した場合の実際の開発サーバー起動手順。
 - Phaserを採用した場合のbuild手順。
-- GitHub HTTPS認証がローカル環境で成功するか。
+- GitHub Actions上で `.github/workflows/build.yml` が成功するか。
 
 ## 次に人間が確認すべきこと
 
@@ -103,4 +103,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\check-repo.ps1
 - 最初のプロトタイプでPhaserを採用する方針でよいか確認する。
 - PowerShell実行ポリシーをローカル環境でどう扱うか確認する。
 - GitHub Actionsが実際に成功するか確認する。
-- GitHubへの初回push時に、ブラウザまたはGit Credential Managerで認証する。
+- GitHubのActionsタブで初回ワークフロー結果を確認する。
